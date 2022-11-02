@@ -37,3 +37,13 @@ variable "common_tags" {
   description = "Common tags to apply to resources"
   type        = map(string)
 }
+
+variable "vnet_address_space" {
+    description = "Address space for the vnet"
+    type = list(string)
+}
+
+variable "subnet_address_space" {
+    description = "Address space for the snet"
+    type = list(string)
+}
