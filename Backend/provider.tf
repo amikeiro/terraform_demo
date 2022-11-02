@@ -1,6 +1,6 @@
 # Configure the Azure provider
 terraform {
-  backend "azurerm" {}
+  #backend "azurerm" {}
 
 # Version can be determined here or coded in a way to get the default (last version), or up to a specific version (see the documentaiton for more details)
   required_providers {
@@ -9,4 +9,7 @@ terraform {
       version = "=3.8.0"
     }
   }
+}
+provider "azurerm" {
+  features {}
 }

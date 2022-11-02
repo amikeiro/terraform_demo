@@ -21,3 +21,8 @@ Backend
 - provider.tf
 - variables.tf
 
+Virtual datacenter overview
+Topologies
+A virtual datacenter can be built using one of these high-level topologies, based on your needs and scale requirements:
+
+In a Flat topology, all resources are deployed in a single virtual network. Subnets allow for flow control and segregation.
