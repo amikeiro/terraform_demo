@@ -19,7 +19,7 @@ resource "azurerm_key_vault" "this" {
 }
 
 
-# Setting up the keyvault access policy for a user
+# Setting up the keyvault access policy for a user -
 
 resource "azurerm_key_vault_access_policy" "user" {
   key_vault_id = azurerm_key_vault.this.id
