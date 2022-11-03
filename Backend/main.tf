@@ -20,3 +20,12 @@ module "network" {
   tags = var.common_tags
 }
 
+#>>>>>>>>>>>>>>>>>>> Monitoring (Log Analytics (Workspace)) <<<<<<<<<<<<<<<<<<<<<
+module "monitoring" {
+  source = "../Modules/Monitoring"
+  resource_group_name = azurerm_resource_group.this.name
+  region = var.region
+  project = var.project
+  environment = var.environment
+  tags = var.common_tags
+}
