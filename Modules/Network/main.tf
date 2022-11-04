@@ -16,6 +16,8 @@ resource "azurerm_subnet" "subnet_innsikt" {
     address_prefixes                        = var.subnet_address_space
     #snet_address_space                    = var.subnet_address_space
 
-    #enforce_private_link_endpoint_network_policies = true
-
+    enforce_private_link_endpoint_network_policies = true
+    service_endpoints = [
+        "Microsoft.KeyVault"
+    ]
 }

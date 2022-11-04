@@ -47,3 +47,8 @@ variable "subnet_address_space" {
     description = "Address space for the snet"
     type = list(string)
 }
+
+variable "ip_allow_list" {
+    description = "List of source IP Exceptions to firewall"
+    type = list(string) 
+}
