@@ -6,6 +6,7 @@ resource "azurerm_virtual_network" "this" {
     location = var.region
     resource_group_name = var.resource_group_name
     address_space = var.vnet_address_space
+    tags = var.tags
 }
 
 # Manages a subnet. Subnets represent network segments within the IP space defined by the virtual network.

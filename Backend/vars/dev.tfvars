@@ -9,12 +9,13 @@ project = "innsikt"
 environment = "dev"
 common_tags = {
     "Service"   : "innsikt",
-    "Environment"   : "dev"
-    "Owner" : "amir.kheirollah@atea.no"
-    "ProvisionMethod" : "Terraform"
-    "CreationContext" : "Permanent"
+    "Environment"   : "dev",
+    "Owner" : "amir.kheirollah@atea.no",
+    "ProvisionMethod" : "Terraform",
+    "CreationContext" : "Permanent",
     "costcenter" : "141011"
 }
+
 
 #>>>>>>>>>>>>>>>>>>>>>>>>>>Network<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
