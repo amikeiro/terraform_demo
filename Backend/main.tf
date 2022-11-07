@@ -40,6 +40,9 @@ module "monitoring" {
 module "keyvault" {
   source = "../modules/keyvault"
   resource_group_name = azurerm_resource_group.this.name
+  office_region = var.office_region
+  office = var.office
+  customer = var.customer
   region = var.region
   project = var.project
   environment = var.environment

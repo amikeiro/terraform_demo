@@ -1,3 +1,18 @@
+variable "office_region" {
+  description = "The Atea region in which the office to deploy resources is located"
+  type        = string
+}
+
+variable "office" {
+  description = "The Atea office that deploys the resources"
+  type        = string
+}
+
+variable "customer" {
+  description = "Atea or the Atea's customer that the infrastructure is deployed for"
+  type        = string
+}
+
 variable "region" {
     description = "Name of region"
     type = string
