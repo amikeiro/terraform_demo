@@ -56,3 +56,31 @@ module "keyvault" {
   allowed_ips = var.ip_allow_list
   tags = var.common_tags
 }
+
+#>>>>>>>>>>>>>>>>>>> StorageAccount <<<<<<<<<<<<<<<<<<<<<
+resource "random_id" "storage_account" {
+    keepers = {environment = var.environment}
+    byte_length = 8
+}
+
+module "storage" {
+  source                     = "../modules/storage"
+  resource_group_name        = azurerm_resource_group.this.name
+  region                     = var.region
+  project                    = var.project
+  environment                = var.environment
+  account_name               = "st${var.project}${var.environment}${lower(random_id.storage_account.b64_url)}"
+  private_endpoint_subnet_id = module.network.default_subnet
+  log_analytics_workspace_id = module.monitoring.workspace_id
+  allowed_subnets = [
+    module.network.default_subnet
+  ]
+  allowed_ips = var.ip_allow_list
+  tags = var.common_tags
+}
+
+resource "azurerm_storage_container" "this" {
+  name = "external-${var.environment}"
+  storage_account_name = module.storage.storage_account_name
+  container_access_type = "private"
+}
