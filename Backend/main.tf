@@ -59,7 +59,10 @@ module "keyvault" {
 
 #>>>>>>>>>>>>>>>>>>> StorageAccount <<<<<<<<<<<<<<<<<<<<<
 resource "random_id" "storage_account" {
+    # Generate a new id each time we switch to a new environment
+    # Keeper - (Optional) Arbitrary map of values that, when changed, will trigger a new id to be generated. See the main provider documentation for more information.
     keepers = {environment = var.environment}
+    # (Required) The number of random bytes to produce. The minimum value is 1, which produces eight bits of randomness.
     byte_length = 8
 }
 
